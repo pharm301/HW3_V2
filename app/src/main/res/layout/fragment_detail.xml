@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/detail_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+      <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="false"
+        android:background="@android:color/transparent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbarFilmname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="false"
+            app:contentScrim="@android:color/transparent"
+            app:collapsedTitleGravity="top|center_horizontal"
+            app:collapsedTitleTextAppearance="@style/ToolBarTextStyleCollapsed"
+            app:expandedTitleMarginEnd="8dp"
+            app:expandedTitleMarginStart="8dp"
+            app:expandedTitleTextAppearance="@style/ToolBarTextStyle"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:maxLines="3"
+            app:title="Приверчик">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+            <ImageView
+                android:id="@+id/imagePoster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="false"
+                android:cropToPadding="false"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardElevation="@dimen/spacing_medium">
+
+            <TextView
+                android:id="@+id/textDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_large"
+                android:textColor="@color/purple_500"
+                android:textSize="18sp"
+                tools:text="МНОГО много букв" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:src="@drawable/is_favor"
+    android:tint="@android:color/white"
+        app:backgroundTint="@color/teal_200" />
+    <!--
+            app:srcCompat="@android:drawable/star_on"
+    -->
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

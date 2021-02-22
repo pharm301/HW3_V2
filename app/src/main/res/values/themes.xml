@@ -1,0 +1,41 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.HW3_V2" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.HW3_V2.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.HW3_V2.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.HW3_V2.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ToolBarTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">40dp</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">8</item>
+        <item name="android:shadowDy" >8</item>
+        <item name="android:shadowRadius">10</item>
+    </style>
+    <style name="ToolBarTextStyleCollapsed" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">30dp</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">00</item>
+        <item name="android:shadowDy" >00</item>
+        <item name="android:shadowRadius">00</item>
+    </style>
+
+</resources>

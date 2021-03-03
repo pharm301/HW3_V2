@@ -1,4 +1,4 @@
-package com.levin.hw3_v2
+package com.levin.hw3_v2.favorite
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,9 +11,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
+import com.levin.hw3_v2.FavoriteItem
+import com.levin.hw3_v2.R
 import com.levin.hw3_v2.R.color
 import com.levin.hw3_v2.R.layout
-import com.levin.hw3_v2.app.Companion.items
+import com.levin.hw3_v2.UndoItem
+import com.levin.hw3_v2.App.Companion.items
 
 class FavoriteFragment : Fragment(){
     companion object {

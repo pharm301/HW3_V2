@@ -1,10 +1,11 @@
-package com.levin.hw3_v2
+package com.levin.hw3_v2.gallery
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.levin.hw3_v2.R
 
 class FilmVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val filmnameTV : TextView = itemView.findViewById(R.id.filmname)
@@ -22,8 +23,8 @@ class FilmVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
  //       val drawable = ResourcesCompat.getDrawable(itemView.resources,R.drawable.ic_launcher_background,null)
 //        filmposterIV.background = item.context.resources.getDrawable(resID,null)
 
-        if (item.favor)  filmfavorIV.background = ResourcesCompat.getDrawable(itemView.resources,R.drawable.is_favor,null)
-        else filmfavorIV.background = ResourcesCompat.getDrawable(itemView.resources,R.drawable.no_favor,null)
+        if (item.favor)  filmfavorIV.background = ResourcesCompat.getDrawable(itemView.resources, R.drawable.is_favor,null)
+        else filmfavorIV.background = ResourcesCompat.getDrawable(itemView.resources, R.drawable.no_favor,null)
 
     }
 }

@@ -1,10 +1,12 @@
-package com.levin.hw3_v2
+package com.levin.hw3_v2.favorite
 
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.levin.hw3_v2.FavoriteItem
+import com.levin.hw3_v2.R
 
 
 class FavoriteVH( itemView: View) : RecyclerView.ViewHolder(itemView) {

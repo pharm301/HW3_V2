@@ -1,10 +1,11 @@
-package com.levin.hw3_v2
+package com.levin.hw3_v2.favorite
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.levin.hw3_v2.FavoriteFragment.Companion.favoriteList
-import java.util.*
+import com.levin.hw3_v2.favorite.FavoriteFragment.Companion.favoriteList
+import com.levin.hw3_v2.FavoriteItem
+import com.levin.hw3_v2.R
 
 
 class FavoriteAdapter (private val clickListener: FavoriteClickListener): RecyclerView.Adapter<FavoriteVH>() {

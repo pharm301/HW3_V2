@@ -1,8 +1,9 @@
 package com.levin.hw3_v2
 
 import android.app.Application
+import com.levin.hw3_v2.gallery.FilmItem
 
-class app : Application() {
+class App : Application() {
     companion object {
         var items = mutableListOf(
                 FilmItem(0, "Возвращение джедая", "film4", "film4", false),
@@ -16,5 +17,6 @@ class app : Application() {
                 FilmItem(0, "Проект А", "film9", "film9", false),
                 FilmItem(0, "Гладиатор", "film10", "film10", false),
         )
+        lateinit var curItem: FilmItem
     }
 }

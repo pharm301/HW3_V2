@@ -9,7 +9,12 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import com.levin.hw3_v2.app.Companion.items
+import com.levin.hw3_v2.App.Companion.curItem
+import com.levin.hw3_v2.App.Companion.items
+import com.levin.hw3_v2.detail.DetailFragment
+import com.levin.hw3_v2.favorite.FavoriteFragment
+import com.levin.hw3_v2.gallery.FilmItem
+import com.levin.hw3_v2.gallery.FilmListFragment
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, FilmListFragment.OnFilmClickListener{
     companion object {
@@ -49,7 +54,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView.setNavigationItemSelectedListener(this)
 
 //        toolbar.title = resources.getString(R.string.menu_gallery)
-        useFragMan(curFrag,resources.getString(R.string.menu_gallery))
+        if (curFrag==2) {onFilmClick(App.curItem)}
+        else useFragMan(curFrag,resources.getString(R.string.menu_gallery))
     }
 
     private fun useFragMan(myFrag: Int, title : String) {
@@ -70,7 +76,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     .replace(R.id.fragmentContainer, FavoriteFragment(), FavoriteFragment.TAG)
                     .commit()
             }
-        }
+            2 -> {
+                supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.fragmentContainer, DetailFragment(), FilmListFragment.TAG)
+                        .commit()
+
+            }
+         }
     }
 
     override fun onBackPressed() {
@@ -138,11 +151,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onFilmClick(filmItem: FilmItem) {
+        App.curItem = filmItem
         useFragMan(2,filmItem.filmname)
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragmentContainer, DetailFragment(filmItem), FilmListFragment.TAG)
-//            .addToBackStack(null)
-            .commit()
     }
 }

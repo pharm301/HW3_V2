@@ -2,55 +2,56 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:contentScrim = "?attr/colorPrimary"
+
     android:id="@+id/detail_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-      <com.google.android.material.appbar.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
         android:background="?attr/colorPrimary"
-        app:contentScrim = "?attr/colorPrimary"
+
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-          <com.google.android.material.appbar.CollapsingToolbarLayout
-              android:id="@+id/collapsing_toolbarFilmname"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:fitsSystemWindows="true"
-              app:contentScrim="?attr/colorPrimary"
-              app:expandedTitleMarginEnd="64dp"
-              app:expandedTitleMarginStart="48dp"
-              app:layout_scrollFlags="scroll|exitUntilCollapsed"
-              app:collapsedTitleGravity="top|center_horizontal"
-              app:collapsedTitleTextAppearance="@style/ToolBarTextStyleCollapsed"
-              app:expandedTitleTextAppearance="@style/ToolBarTextStyle"
-              app:maxLines="3"
-              app:title="Приверчик">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbarFilmname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginEnd="32dp"
+            app:expandedTitleMarginStart="24dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:collapsedTitleGravity="top|center_horizontal"
+            app:collapsedTitleTextAppearance="@style/ToolBarTextStyleCollapsed"
+            app:expandedTitleTextAppearance="@style/ToolBarTextStyle"
+            app:maxLines="3"
+            app:title="Приверчик">
 
-              <androidx.appcompat.widget.Toolbar
-                  android:id="@+id/toolbar"
-                  android:layout_width="match_parent"
-                  android:layout_height="?attr/actionBarSize"
-                  app:layout_collapseMode="pin"
-                  app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="parallax"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-              <ImageView
-                  android:id="@+id/imagePoster"
+            <ImageView
+                android:id="@+id/imagePoster"
+                android:layout_width="match_parent"
+                android:layout_height="800dp"
+                android:adjustViewBounds="false"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"
+                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
 
-                  app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:scaleType="centerCrop"
-                  app:layout_collapseMode="parallax"
-                  android:minHeight="100dp"
-                  tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
-          </com.google.android.material.appbar.CollapsingToolbarLayout>
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -89,7 +90,7 @@
         android:adjustViewBounds="false"
         android:cropToPadding="false"
         android:src="@drawable/is_favor"
-    android:tint="@android:color/white"
+        android:tint="@android:color/white"
         app:backgroundTint="@color/teal_200" />
     <!--
             app:srcCompat="@android:drawable/star_on"

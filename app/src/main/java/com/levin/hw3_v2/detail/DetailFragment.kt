@@ -1,7 +1,6 @@
-package com.levin.hw3_v2
+package com.levin.hw3_v2.detail
 
 
-import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,11 +12,14 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
+import com.levin.hw3_v2.App
+import com.levin.hw3_v2.gallery.FilmItem
+import com.levin.hw3_v2.R
 
 
-class DetailFragment(private val filmItem: FilmItem) : Fragment() {
-    override fun onCreateView(
+class DetailFragment : Fragment() {
+
+   override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,19 +29,20 @@ class DetailFragment(private val filmItem: FilmItem) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val collapsingToolbar = view.findViewById(R.id.collapsing_toolbarFilmname) as CollapsingToolbarLayout
-        collapsingToolbar.title = filmItem.filmname
+        collapsingToolbar.title = App.curItem.filmname
         val filmdetailTV : TextView = view.findViewById(R.id.textDetail)
         val filmposterIV : ImageView = view.findViewById(R.id.imagePoster)
 
         var resID = view.context.resources.getIdentifier(
-            filmItem.postername,
+            App.curItem.postername,
             "drawable",
             view.context.packageName
         )
         filmposterIV.background = ResourcesCompat.getDrawable(view.resources, resID, null)
         resID = view.context.resources.getIdentifier(
-            filmItem.filmdetail,
+            App.curItem.filmdetail,
             "string",
             view.context.packageName
         )
@@ -47,7 +50,7 @@ class DetailFragment(private val filmItem: FilmItem) : Fragment() {
 
         val fab: FloatingActionButton = view.findViewById(R.id.fab_detail)
 
-        if (filmItem.favor) {
+        if (App.curItem.favor) {
             fab.setImageDrawable(view.resources.getDrawable(R.drawable.is_favor, null))
             fab.backgroundTintList = view.resources.getColorStateList (R.color.yellow,null)
         }
@@ -56,13 +59,13 @@ class DetailFragment(private val filmItem: FilmItem) : Fragment() {
            fab.backgroundTintList = view.resources.getColorStateList (R.color.teal_200,null)
         }
         fab.setOnClickListener { view ->
-            if (filmItem.favor) {
-                filmItem.favor = false
+            if (App.curItem.favor) {
+                App.curItem.favor = false
                 fab.setImageDrawable(view.resources.getDrawable(R.drawable.no_favor, null))
                 fab.backgroundTintList = view.resources.getColorStateList (R.color.teal_200,null)
                 Toast.makeText(this.requireContext(), "Не нравится :(", Toast.LENGTH_SHORT).show()
             } else {
-                filmItem.favor = true
+                App.curItem.favor = true
                 fab.setImageDrawable(view.resources.getDrawable(R.drawable.is_favor, null))
                 fab.backgroundTintList = view.resources.getColorStateList (R.color.yellow,null)
                 Toast.makeText(this.requireContext(), "Нравится !", Toast.LENGTH_SHORT).show()

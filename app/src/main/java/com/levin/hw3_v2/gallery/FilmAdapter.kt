@@ -1,9 +1,10 @@
-package com.levin.hw3_v2
+package com.levin.hw3_v2.gallery
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.levin.hw3_v2.app.Companion.items
+import com.levin.hw3_v2.R
+import com.levin.hw3_v2.App.Companion.items
 
 class FilmAdapter (private val clickListener: FilmClickListener): RecyclerView.Adapter<FilmVH>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmVH {
